@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartDown</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>📝 Éditeur Markdown Live</h1>
+        <button id="toggle-theme">🌗 Thème</button>
+    </header>
+    <main>
+        <section>
+            <h2>Éditeur</h2>
+            <textarea id="markdown-input" placeholder="Écris ton Markdown ici..."></textarea>
+        </section>
+        <section>
+            <h2>Aperçu</h2>
+            <div id="preview"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-buttons">
+            <button id="copy-html">📋 Copier HTML</button>
+            <button id="export-html">💾 Exporter HTML</button>
+        </div>
+        <p>&copy; 2025 SmartDown • By Z3S ♥</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
