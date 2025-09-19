@@ -9,6 +9,7 @@ SmartDown est un éditeur Markdown en temps réel, simple et élégant, qui perm
 - Édition live de Markdown avec aperçu HTML immédiat
 - Mode clair / mode sombre basculable
 - Copier le HTML rendu dans le presse-papiers en un clic
+- Module d'accessibilité
 - Exporter l’aperçu en fichier HTML complet
 - Sauvegarde automatique du contenu et du thème dans le localStorage
 - Interface responsive pour un usage sur mobile et desktop
