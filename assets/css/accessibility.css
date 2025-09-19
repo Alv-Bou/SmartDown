@@ -1,0 +1,271 @@
+/* Police OpenDyslexic pour le mode dyslexie */
+@font-face {
+  font-family: "opendys";
+  src: url("../fonts/OpenDyslexic-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Conteneur du widget d'accessibilité */
+#accessibility-widget {
+  position: fixed;
+  top: 16px;
+  right: 200px;
+  z-index: 99999;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Bouton d'ouverture/fermeture du menu */
+#accessibility-toggle {
+  background: transparent;
+  color: #222;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.6s ease, color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Focus sur le toggle */
+#accessibility-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Animation du clic sur le toggle */
+#accessibility-toggle:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Icônes dans le toggle */
+#accessibility-toggle img,
+#accessibility-toggle svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* Effet hover sur le toogle */
+#accessibility-toggle {
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#accessibility-toggle:hover {
+  background: rgba(0, 150, 230, 0.15); 
+  transform: scale(1.05); 
+  box-shadow: 0 4px 12px rgba(0, 150, 230, 0.15); 
+}
+
+/* Classe toggle ouverte */
+#accessibility-toggle.open {
+  color: #222;
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Menu d'options d'accessibilité */
+#accessibility-menu {
+  width: 240px;
+  margin-top: 12px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid #ddd;
+  font-size: 14px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Menu visible */
+#accessibility-menu.visible {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Labels dans le menu */
+#accessibility-menu label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Selects dans le menu */
+#accessibility-menu select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Bouton de réinitialisation */
+.reset-btn {
+  margin-top: 8px;
+  background: #e0e0e0;
+  border: 1px solid #999;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* Hover sur reset */
+.reset-btn:hover {
+  background: #d4d4d4;
+  transform: translateY(-2px);
+}
+
+/* Thème contraste normal */
+body.contrast-normal {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  filter: none !important;
+}
+
+/* Contraste normal – éléments */
+body.contrast-normal * {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: #ddd !important;
+}
+
+/* Contraste normal – cartes, hero et footer */
+body.contrast-normal .hero,
+body.contrast-normal .card,
+body.contrast-normal .site-footer {
+  border: 1px solid #ccc !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover cartes contraste normal */
+body.contrast-normal .card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Thème contraste élevé */
+body.contrast-high {
+  background-color: #343643 !important;
+  color: #ffffff !important;
+}
+
+/* Contraste élevé – éléments */
+body.contrast-high *::before,
+body.contrast-high *::after,
+body.contrast-high * {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: #5a5a6e !important;
+}
+
+/* Liens contraste élevé */
+body.contrast-high a,
+body.contrast-high a:visited {
+  color: #ffffff !important;
+}
+
+/* Images contraste élevé */
+body.contrast-high img {
+  filter: brightness(1.2) contrast(1.5) !important;
+}
+
+/* Cartes, hero et footer contraste élevé */
+body.contrast-high .hero,
+body.contrast-high .card,
+body.contrast-high .site-footer {
+  border: 2px solid #5a5a6e !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Thème contraste inversé */
+body.contrast-invert {
+  background-color: #001f4d !important;
+  color: #ffff00 !important;
+}
+
+/* Contraste inversé – éléments */
+body.contrast-invert *::before,
+body.contrast-invert *::after,
+body.contrast-invert * {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: #002060 !important;
+}
+
+/* Liens contraste inversé */
+body.contrast-invert a,
+body.contrast-invert a:visited {
+  color: #ffff00 !important;
+}
+
+/* Images contraste inversé */
+body.contrast-invert img {
+  filter: invert(1) !important;
+}
+
+/* Cartes, hero et footer contraste inversé */
+body.contrast-invert .hero,
+body.contrast-invert .card,
+body.contrast-invert .site-footer {
+  border: 2px solid #002060 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+/* Police dyslexique */
+body.font-dyslexic {
+  font-family: "opendys", sans-serif !important;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  word-spacing: 0.6px;
+}
+
+/* Interlignage large */
+body.lineheight-large {
+  line-height: 1.8 !important;
+}
+
+/* Réinitialisation des styles des images selon thème */
+body.contrast-normal img,
+body.contrast-high img,
+body.contrast-invert img {
+  background-color: initial !important;
+  color: initial !important;
+  border-color: initial !important;
+  filter: none !important;
+}
+
+/* Adaptation mobile du menu */
+@media (max-width: 480px) {
+  #accessibility-menu {
+    width: 200px;
+    right: 0;
+    left: 0;
+    margin: 8px auto;
+  }
+}

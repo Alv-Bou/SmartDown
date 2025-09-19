@@ -22,7 +22,7 @@ async function copyHTML() {
     } catch (err) {
         console.error("Erreur lors de la copie :", err);
         alert("❌ Impossible de copier le HTML.");
-    }
+    }A
 }
 
 // Exporte l'aperçu en fichier HTML complet

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartDown</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
     <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
 </head>
@@ -24,6 +25,37 @@
             <h2>Aperçu</h2>
             <div id="preview"></div>
         </section>
+
+        <div id="accessibility-widget" aria-hidden="false">
+            <button id="accessibility-toggle" aria-expanded="false" aria-controls="accessibility-menu" 
+            aria-label="Ouvrir les options d'accessibilité">
+            <img src="assets/images/accessibility.svg" alt="Icône d'accessibilité">
+            </button>
+            <div id="accessibility-menu" role="menu" aria-label="Options d'accessibilité" class="hidden">
+                <h4>Accessibilité</h4>
+
+                <label for="contrast-select">Contraste :</label>
+                <select id="contrast-select" role="menuitem">
+                    <option value="default">Par défaut</option> 
+                    <option value="high">Renforcer</option> 
+                    <option value="invert">Inversé</option> 
+                </select>
+
+                <label for="font-select">Police :</label>
+                <select id="font-select" role="menuitem">
+                    <option value="default">Par défaut</option> 
+                    <option value="dyslexic">Mode dyslexie</option> 
+                </select>
+
+                <label for="lineheight-select">Interlignage :</label>
+                <select id="lineheight-select" role="menuitem">
+                    <option value="default">Par défaut</option> 
+                    <option value="large">Augmenté</option> 
+                </select>
+
+                <button id="reset-accessibility" class="reset-btn" type="button">Réinitialiser</button>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-buttons">
@@ -34,6 +66,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/accessibility.js"></script>
 </body>
 
 </html>
